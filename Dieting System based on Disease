@@ -1,33 +1,18 @@
-domains
-disease,indication,name = symbol
-
-predicates
-    hypothesis(name,disease)
-    symptom(name,indication)
-
-clauses
-    symptom(amit,fever).
-    symptom(amit,rash).
-    symptom(amit,headache).
-    symptom(amit,runn_nose).
-
-    symptom(kaushal,chills).
-    symptom(kaushal,fever).
-    symptom(kaushal,hedache).
-
-    symptom(dipen,runny_nose).
-    symptom(dipen,rash).
-    symptom(dipen,flu).
-
-
-    hypothesis(Patient,measels):-
-        symptom(Patient,fever),
-        symptom(Patient,cough),
-        symptom(Patient,conjunctivitis),
-        symptom(Patient,rash).
-
-    hypothesis(Patient,german_measles) :-
-        symptom(Patient,fever),
-        symptom(Patient,headache),
-        symptom(Patient,runny_nose),
-        symptom(Patient,rash).
+go:-
+    write('Dieting System'),
+    write('1,Paleo'),
+    write('2,keto'),
+    write('3,Vegan'),
+    write('4,Weight Watchers'),
+    read(Choose),get_single_char(name),
+    hypothesis(choose,name),
+    
+go:-
+    plan(paleo,name):-
+    write('The aim of a paleo diet is to return to a way of eating that's more like what early humans ate').
+    plan(keto,name):-
+    write('Very efficient in improving one's heart health').
+    plan(vegan,name):-
+    write('Based on plants').
+    plan(Weight Watchers,name):-
+    write('Based on pointing system,meal replacement and counseling').
